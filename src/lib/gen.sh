@@ -164,8 +164,8 @@ function buildHelpTable() {
             if [ -z "$helpText" ]; then helpText="(no help available)"; fi
             echo "$argName|:|$helpText"
             case "$argName" in
-                "help") local hlp="no";;
-                "version") local vrs="no";;
+                help|-h|--help) local hlp="no";;
+                version|-v|--version) local vrs="no";;
             esac
         fi
     done
@@ -174,7 +174,7 @@ function buildHelpTable() {
 }
 
 function buildHelpFunction() {
-    print_out '    "help")'
+    print_out '    help|-h|--help)'
     print_out "      echo \"Usage: $ARTIFACT_ID <task> [...]\" 1>&2"
     print_out '      cat 1>&2 <<HELP'
     print_out ''
@@ -189,7 +189,7 @@ function buildHelpFunction() {
 }
 
 function buildVersionFunction() {
-    print_out '    "version")'
+    print_out '    version|-v|--version)'
     print_out "      echo \"$ARTIFACT_ID $ARTIFACT_VERSION (bash \$BASH_VERSION)\""
     print_out '      status=0'
     print_out '      ;;'
