@@ -2,4 +2,6 @@
 
 # <help>deploy uberbash at $HOME/.bin</help>
 
-__run "deploy" "$HOME/.bin"
+: "${PREFIX:=$HOME/.local}";
+: "${BINDIR:=${1:-$PREFIX/bin}}";
+__run "deploy" "$BINDIR";
