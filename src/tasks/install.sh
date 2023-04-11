@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# <help>deploy uberbash at $HOME/.bin</help>
+# <help>deploy uberbash to path, or $PREFIX/bin ( default: $HOME/.local )</help>
 
 : "${PREFIX:=$HOME/.local}";
 : "${BINDIR:=${1:-$PREFIX/bin}}";
